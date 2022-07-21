@@ -1,7 +1,25 @@
 import s from "./header.module.sass"
 import {motion} from "framer-motion";
+import {MDropdown} from "../dropdown/Dropdown";
+
+interface Link {
+    text: string
+    type: string
+    items?: string[]
+}
+
+interface DataLinks extends Array<Link>{}
 
 const Header = () => {
+
+    const dataLinks: DataLinks = [
+        {text: 'Britanskii', type: 'div'},
+        {text: 'Главная', type: 'div'},
+        {
+            text: 'Проекты', type: 'dropdown', items: ['IGaming', 'Новелла', 'Лендинг']
+        },
+        {text: 'Музыка', type: 'div'},
+    ]
 
 
     const variants = {
@@ -9,7 +27,7 @@ const Header = () => {
             opacity: 0,
             y: -100,
         },
-        appearance:  (custom: number) => {
+        appearance: (custom: number) => {
             return {
                 opacity: 1,
                 y: 0,
@@ -20,13 +38,26 @@ const Header = () => {
         }
     }
 
-    const links = ['Britanskii', 'Главная', 'Проекты', 'Музыка'].map((text, id) => {
-        return <motion.div
-            variants={variants}
-            custom={id}
-            initial='initial'
-            animate='appearance'
-            className={s.header__link}>{text}</motion.div>
+    const links = dataLinks.map((link, id) => {
+        if (link.type === "div") {
+            return <motion.div
+                variants={variants}
+                custom={id}
+                initial='initial'
+                animate='appearance'
+                className={s.header__link}>{link.text}
+            </motion.div>
+        } else if (link.type === "dropdown" && link.items !== undefined) {
+            return <MDropdown
+                title={link.text}
+                items={link.items}
+                variants={variants}
+                custom={id}
+                initial='initial'
+                animate='appearance'
+                className={s.header__link}
+            />
+        }
     })
 
     return (
@@ -36,6 +67,7 @@ const Header = () => {
             <nav className={s.header__nav}>
                 {links.slice(1)}
             </nav>
+
         </header>
     )
 }

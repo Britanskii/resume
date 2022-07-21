@@ -26,10 +26,9 @@ const Main = () => {
             x: "85%",
         },
         rotate: {
-            opacity: 1,
-            rotate: 360,
+            rotate: 180,
             transition: {
-                duration: 7,
+                duration: 3.5,
                 repeat: Infinity,
                 ease: "linear"
             }
