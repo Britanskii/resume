@@ -2,13 +2,13 @@ import s from "./header.module.sass"
 import {motion} from "framer-motion";
 import {MDropdown} from "../dropdown/Dropdown";
 
-interface Link {
+interface LinkType {
     text: string
     type: string
     items?: string[]
 }
 
-interface DataLinks extends Array<Link>{}
+interface DataLinks extends Array<LinkType>{}
 
 const Header = () => {
 

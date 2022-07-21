@@ -4,12 +4,23 @@
 	z-index: 2
 	position: relative
 	background-color: white
-	display: block
 	height: 100vh
+	display: flex
+	justify-content: flex-end
+	padding: 10px 20px 0 0
+	&__title
+		font-weight: 600
+		font-size: 124px
 	&__background
-		top: -30px
+		display: flex
+		justify-content: space-between
+		top: -50px
 		left: 10%
 		position: absolute
 		width: 45%
-		height: 400px
+		padding: 20px
 		background-color: $accent-light
+	&__img
+		width: 44%
+		&:nth-child(2)
+			width: 47%

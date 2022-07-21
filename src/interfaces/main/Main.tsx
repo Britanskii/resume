@@ -23,7 +23,6 @@ const Main = () => {
 
     const variants = {
         appearance: {
-            x: "85%",
         },
         rotate: {
             rotate: 180,
