@@ -1,6 +1,6 @@
 import s from "./main.module.sass"
 import react from "../../resources/images/react.svg"
-import {motion} from "framer-motion";
+import {motion} from "framer-motion"
 
 const Main = () => {
 

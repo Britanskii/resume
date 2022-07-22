@@ -1,7 +1,7 @@
 import s from "./header.module.sass"
-import {motion} from "framer-motion";
-import {MDropdown} from "../dropdown/Dropdown";
-import {useEffect, useState} from "react";
+import {motion} from "framer-motion"
+import {MDropdown} from "../dropdown/Dropdown"
+import {useEffect, useState} from "react"
 
 interface LinkType {
     text: string
@@ -9,37 +9,37 @@ interface LinkType {
     items?: string[]
 }
 
-interface DataLinks extends Array<LinkType>{}
+type DataLinks = Array<LinkType>
 
 const Header = () => {
 
-    const [scroll, setScroll] = useState(0);
-    const [clazz, setClazz] = useState('');
+    const [scroll, setScroll] = useState(0)
+    const [clazz, setClazz] = useState("")
 
     const handleScroll = () => {
-        setScroll(window.scrollY);
+        setScroll(window.scrollY)
     }
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
     useEffect(() => {
         if (scroll >= 775) {
             setClazz(s.header_black)
         } else {
-            setClazz('')
+            setClazz("")
         }
     }, [scroll])
 
     const dataLinks: DataLinks = [
-        {text: 'Britanskii', type: 'div'},
-        {text: 'Главная', type: 'div'},
+        {text: "Britanskii", type: "div"},
+        {text: "Главная", type: "div"},
         {
-            text: 'Проекты', type: 'dropdown', items: ['IGaming', 'Новелла', 'Лендинг']
+            text: "Проекты", type: "dropdown", items: ["IGaming", "Новелла", "Лендинг"]
         },
-        {text: 'Музыка', type: 'div'},
+        {text: "Музыка", type: "div"},
     ]
 
 

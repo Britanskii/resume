@@ -1,9 +1,9 @@
 
 //styles
-declare module '*.sass'
+declare module "*.sass"
 
 //images
-declare module '*.svg'
-declare module '*.png'
-declare module '*.webp'
+declare module "*.svg"
+declare module "*.png"
+declare module "*.webp"
 

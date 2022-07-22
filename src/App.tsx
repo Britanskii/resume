@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 import s from "./app.module.sass"
-import Main from "./interfaces/main/Main";
-import Header from "./components/header/Header";
-import Project from "./interfaces/project/Project";
+import Main from "./interfaces/main/Main"
+import Header from "./components/header/Header"
+import Project from "./interfaces/project/Project"
 
 const App = () => {
     return (
@@ -14,4 +14,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default App

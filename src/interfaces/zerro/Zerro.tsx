@@ -1,5 +1,5 @@
 import s from "./zerro.module.sass"
-import {motion} from "framer-motion";
+import {motion} from "framer-motion"
 import cat_light from "../../resources/zerros/zerro/cat_light.png"
 import cat_dark from "../../resources/zerros/zerro/cat_dark.png"
 import background_cats from "../../resources/zerros/zerro/background_cats.png"

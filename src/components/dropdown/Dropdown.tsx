@@ -1,6 +1,6 @@
 import s from "./dropdown.module.sass"
-import {motion, AnimatePresence} from "framer-motion";
-import {forwardRef, useState} from "react";
+import {motion, AnimatePresence} from "framer-motion"
+import {forwardRef, useState} from "react"
 
 interface DropdownProps {
     title: string,
@@ -8,6 +8,7 @@ interface DropdownProps {
     className?: string
 }
 
+// eslint-disable-next-line react/display-name
 export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>( ({title, items, className}: DropdownProps, ref) => {
 
     const [isActive, setIsActive] = useState(false)
@@ -47,7 +48,7 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>( ({title, item
                         className={s.dropdown__container}>
                         <ul className={s.dropdown__list}>
                             {items.map(text =>
-                                <li className={s.dropdown__item}>
+                                <li key={text} className={s.dropdown__item}>
                                     {text}
                                 </li>
                             )}
