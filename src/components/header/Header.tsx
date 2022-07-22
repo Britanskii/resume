@@ -1,6 +1,7 @@
 import s from "./header.module.sass"
 import {motion} from "framer-motion";
 import {MDropdown} from "../dropdown/Dropdown";
+import {useEffect, useState} from "react";
 
 interface LinkType {
     text: string
@@ -11,6 +12,26 @@ interface LinkType {
 interface DataLinks extends Array<LinkType>{}
 
 const Header = () => {
+
+    const [scroll, setScroll] = useState(0);
+    const [clazz, setClazz] = useState('');
+
+    const handleScroll = () => {
+        setScroll(window.scrollY);
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        if (scroll >= 775) {
+            setClazz(s.header_black)
+        } else {
+            setClazz('')
+        }
+    }, [scroll])
 
     const dataLinks: DataLinks = [
         {text: 'Britanskii', type: 'div'},
@@ -61,7 +82,7 @@ const Header = () => {
     })
 
     return (
-        <header className={s.header}
+        <header className={`${s.header} ${clazz}`}
         >
             {links[0]}
             <nav className={s.header__nav}>
