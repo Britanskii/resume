@@ -4,18 +4,18 @@
 	z-index: 2
 	position: relative
 	background-color: white
-	height: 100vh
 	display: flex
 	justify-content: flex-end
-	padding: 10px 20px 0 0
+	height: 100vh
+	padding: 50px 50px 0 0
 	&__title
 		position: relative
 		z-index: 1
-		color: white
 		text-transform: uppercase
 		font-family: 'Raleway', sans-serif
 		font-weight: 800
 		font-size: 124px
+		margin-right: 50px
 	&__background
 		top: 0
 		right: 0
@@ -25,13 +25,12 @@
 		height: 100%
 		background: white
 	&__view
+		position: relative
 		display: flex
 		justify-content: space-between
-		top: -50px
-		left: 10%
-		position: absolute
 		width: 45%
 		padding: 20px
+		height: fit-content
 		background-color: $accent-light
 		&_img
 			z-index: 1
