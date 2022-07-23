@@ -8,7 +8,6 @@ import {darkVariants, lightVariants, titleVariants, variants} from "../../animat
 
 const Zerro = () => {
 
-
     return (
         <div className={s.zerro}>
             {/*<img src={background} className={s.zerro__background}/>*/}

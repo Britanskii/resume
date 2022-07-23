@@ -1,30 +1,13 @@
 import s from "./header.module.sass"
-import {motion} from "framer-motion"
-import {MDropdown} from "../dropdown/Dropdown"
 import {useEffect, useState} from "react"
-import {variants} from "../../animations/header"
-
-interface LinkType {
-    text: string
-    type: string
-    items?: string[]
-}
-
-type DataLinks = Array<LinkType>
+import Link from "./link/Link"
+import {dataLinks} from "./data/links"
+import useScroll from "../../hooks/useScroll"
 
 const Header = () => {
 
-    const [scroll, setScroll] = useState(0)
+    const [scroll] = useScroll()
     const [clazz, setClazz] = useState("")
-
-    const handleScroll = () => {
-        setScroll(window.scrollY)
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
 
     useEffect(() => {
         if (scroll >= 775) {
@@ -34,36 +17,7 @@ const Header = () => {
         }
     }, [scroll])
 
-    const dataLinks: DataLinks = [
-        {text: "Britanskii", type: "div"},
-        {text: "Главная", type: "div"},
-        {
-            text: "Проекты", type: "dropdown", items: ["IGaming", "Новелла", "Лендинг"]
-        },
-        {text: "Музыка", type: "div"},
-    ]
-
-    const links = dataLinks.map((link, id) => {
-        if (link.type === "div") {
-            return <motion.div
-                variants={variants}
-                custom={id}
-                initial='initial'
-                animate='appearance'
-                className={s.header__link}>{link.text}
-            </motion.div>
-        } else if (link.type === "dropdown" && link.items !== undefined) {
-            return <MDropdown
-                title={link.text}
-                items={link.items}
-                variants={variants}
-                custom={id}
-                initial='initial'
-                animate='appearance'
-                className={s.header__link}
-            />
-        }
-    })
+    const links = dataLinks.map((link, id) => <Link key={id} link={link} delay={id}/>)
 
     return (
         <header className={`${s.header} ${clazz}`}

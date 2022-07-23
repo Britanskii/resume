@@ -2,6 +2,7 @@ import s from "./dropdown.module.sass"
 import {motion, AnimatePresence} from "framer-motion"
 import {forwardRef, useState} from "react"
 import {variants} from "../../animations/dropdown"
+import {toggle} from "../../functions/functions";
 
 interface DropdownProps {
     title: string,
@@ -13,9 +14,7 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>( ({title, item
 
     const [isActive, setIsActive] = useState(false)
 
-    const toggleActive = () => {
-        setIsActive(isActive => isActive = !isActive)
-    }
+    const onToggle = () => toggle(setIsActive)
 
     const setDisabled = () => {
         setIsActive(false)
@@ -26,7 +25,7 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>( ({title, item
     }
 
     return (
-        <div  ref={ref} onMouseLeave={setDisabled} onMouseEnter={setActive} onClick={toggleActive} className={`${s.dropdown} ${className}`}>
+        <div  ref={ref} onMouseLeave={setDisabled} onMouseEnter={setActive} onClick={onToggle} className={`${s.dropdown} ${className}`}>
             {title}
             <AnimatePresence>
                 {
