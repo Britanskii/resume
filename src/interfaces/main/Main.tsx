@@ -1,38 +1,9 @@
 import s from "./main.module.sass"
 import react from "../../resources/images/react.svg"
 import {motion} from "framer-motion"
+import {variants, variantsText} from "../../animations/main"
 
 const Main = () => {
-
-
-    const variantsText = {
-        initial: {
-            opacity: 0,
-            x: -100,
-        },
-        appearance:  (custom: number) => {
-            return {
-                opacity: 1,
-                x: 0,
-                transition: {
-                    delay: custom * .15
-                }
-            }
-        }
-    }
-
-    const variants = {
-        appearance: {
-        },
-        rotate: {
-            rotate: 180,
-            transition: {
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "linear"
-            }
-        }
-    }
 
     return (
         <div className={s.main}>

@@ -2,6 +2,7 @@ import s from "./header.module.sass"
 import {motion} from "framer-motion"
 import {MDropdown} from "../dropdown/Dropdown"
 import {useEffect, useState} from "react"
+import {variants} from "../../animations/header"
 
 interface LinkType {
     text: string
@@ -41,23 +42,6 @@ const Header = () => {
         },
         {text: "Музыка", type: "div"},
     ]
-
-
-    const variants = {
-        initial: {
-            opacity: 0,
-            y: -100,
-        },
-        appearance: (custom: number) => {
-            return {
-                opacity: 1,
-                y: 0,
-                transition: {
-                    delay: custom * .15 + .5
-                }
-            }
-        }
-    }
 
     const links = dataLinks.map((link, id) => {
         if (link.type === "div") {

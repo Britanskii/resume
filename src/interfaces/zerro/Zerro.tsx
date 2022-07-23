@@ -4,66 +4,10 @@ import cat_light from "../../resources/projects/zerro/cat_light.png"
 import cat_dark from "../../resources/projects/zerro/cat_dark.png"
 import background_cats from "../../resources/projects/zerro/background_cats.png"
 import background from "../../resources/projects/zerro/background.webp"
+import {darkVariants, lightVariants, titleVariants, variants} from "../../animations/zerro"
 
 const Zerro = () => {
 
-    const delay = 1.2
-
-    const variants = {
-        initial: {
-            opacity: 0,
-            y: 100,
-        },
-        appearance: {
-            transition: {
-                delay
-            },
-            opacity: 1,
-            y: 0
-        }
-    }
-
-    const lightVariants = {
-        initial: {
-            x: -200,
-            opacity: 0,
-        },
-        appearance: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                delay: delay + .4
-            }
-        }
-    }
-
-    const darkVariants = {
-        initial: {
-            x: 200,
-            opacity: 0,
-        },
-        appearance: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                delay: delay + .4
-            }
-        }
-    }
-
-    const titleVariants = {
-        initial: {
-            opacity: 0,
-            x: -1000,
-        },
-        appearance: {
-            transition: {
-                delay: delay + .8
-            },
-            opacity: 1,
-            x: 0
-        }
-    }
 
     return (
         <div className={s.zerro}>
