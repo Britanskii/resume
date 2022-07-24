@@ -23,7 +23,7 @@ const Appearance = () => {
                     animate="appearance"
                     custom={2}
                     variants={variantsText}
-                    className={s.main__subtitle}>
+                    className={s.appearance__subtitle}>
                     Frontend developer
                 </motion.div>
             </div>
