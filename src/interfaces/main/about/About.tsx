@@ -1,4 +1,5 @@
 import s from "./about.module.sass"
+
 import {motion} from "framer-motion"
 import {titleVariants, variants} from "../../../animations/about"
 

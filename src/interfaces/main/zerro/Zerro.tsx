@@ -1,6 +1,8 @@
 import s from "./zerro.module.sass"
+
 import {motion} from "framer-motion"
 import {titleVariants} from "../../../animations/zerro"
+
 import Banner from "./banner/Banner"
 import About from "./about/About"
 

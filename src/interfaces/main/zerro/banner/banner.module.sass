@@ -5,9 +5,10 @@
 	display: flex
 	justify-content: space-between
 	width: 45%
+	height: 500px
 	padding: 20px
-	height: fit-content
 	background-color: $accent-light
+	@include Shadow()
 	&__background
 		z-index: 1
 		left: 0
@@ -19,6 +20,4 @@
 	&__image
 		position: relative
 		z-index: 2
-		width: 44%
-		&:nth-child(2)
-			width: 47%
+		width: 100%

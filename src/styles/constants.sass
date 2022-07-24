@@ -3,6 +3,9 @@ $background: #282C34
 $accent: #61dafb
 $accent-light: #ADD5E0
 
+@mixin Shadow ()
+	box-shadow: 0 0 5px black
+
 @mixin Font ($font-size, $font-weight, $line-height: 100%, $text-transform: none, $family: 'Inter')
 	font:
 		family: $family, sans-serif

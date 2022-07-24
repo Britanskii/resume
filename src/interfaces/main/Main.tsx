@@ -1,18 +1,22 @@
+import constants from "../../styles/wrapper.module.sass"
+import s from "./main.module.sass"
 
-import Layout from "../../components/layout/Layout"
 import Appearance from "./appearance/Appearance"
 import About from "./about/About"
 import Zerro from "./zerro/Zerro"
-import React from "react"
+import Novel from "./novel/Novel"
 
 const Main = () => {
 
     return (
-        <Layout>
+        <>
             <Appearance/>
-            <About/>
-            <Zerro/>
-        </Layout>
+            <div className={`${constants.wrapper} ${s.main}`}>
+                <About/>
+                <Zerro/>
+                <Novel/>
+            </div>
+        </>
     )
 }
 

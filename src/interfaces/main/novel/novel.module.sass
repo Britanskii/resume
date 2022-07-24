@@ -1,0 +1,40 @@
+@import "../../../styles/constants"
+
+.novel
+	padding-top: 100px
+	&__title
+		text-align: center
+		@include titleFont()
+	&__block
+		margin-top: 100px
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 40vw
+		height: 400px
+		@include Shadow()
+	&__logo
+		width: 100%
+		height: 100%
+		position: relative
+		z-index: 2
+	&__background
+		width: 100%
+		height: 100%
+		object-fit: cover
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+	&__info
+		display: flex
+	&__about
+		@include titleInfoFont()
+		width: fit-content
+		height: fit-content
+		padding: 25px
+		margin-top: 50px
+		margin-left: 100px
+		background-color: $background
+		color: white
