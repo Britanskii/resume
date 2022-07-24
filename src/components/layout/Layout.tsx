@@ -1,5 +1,6 @@
 import s from "./layout.module.sass"
-import {ReactNode} from "react"
+import React, {ReactNode} from "react"
+import Header from "../header/Header"
 
 interface LayoutProps {
     children: ReactNode
@@ -8,9 +9,12 @@ interface LayoutProps {
 const Layout = ({children}: LayoutProps) => {
 
     return (
-        <div className={s.layout}>
-            {children}
-        </div>
+       <>
+           <Header/>
+           <div className={s.layout}>
+               {children}
+           </div>
+       </>
     )
 }
 

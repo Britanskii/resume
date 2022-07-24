@@ -2,3 +2,21 @@ $background: #282C34
 
 $accent: #61dafb
 $accent-light: #ADD5E0
+
+@mixin Font ($font-size, $font-weight, $line-height: 100%, $text-transform: none, $family: 'Inter')
+	font:
+		family: $family, sans-serif
+		style: normal
+		weight: $font-weight
+		size: $font-size
+	text-transform: $text-transform
+	line-height: $line-height
+
+@mixin titleFont ($font-size: 124px, $font-weight: 800, $text-transform: uppercase, $family: 'Raleway')
+	@include Font($font-size, $font-weight, 1, $text-transform)
+
+@mixin titleInfoFont ($font-size: 24px, $font-weight: 500, $line-height: 2)
+	@include Font($font-size, $font-weight, $line-height, $text-transform: none, $family: 'Inter')
+
+@mixin infoFont ($font-size: 16px, $font-weight: 500, $line-height: 2)
+	@include Font($font-size, $font-weight, $line-height, $text-transform: none, $family: 'Inter')

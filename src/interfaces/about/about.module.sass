@@ -8,11 +8,8 @@
 	justify-content: space-between
 	padding-right: 50px
 	&__title
-		position: relative
-		z-index: 1
-		text-transform: uppercase
-		font-family: 'Raleway', sans-serif
-		font-weight: 800
+		margin-top: 25px
+		@include titleFont()
 		font-size: 8vw
 	&__terms
 		line-height: 2
@@ -23,13 +20,11 @@
 		font-weight: 500
 		margin-top: -50px
 		margin-left: 10%
-		//position: absolute
 		width: 55%
 		background-color: $accent-light
 	&__text
+		@include infoFont()
 		margin-top: 15px
-		font-weight: 500
-		font-size: 16px
 	&__img
 		position: relative
 		z-index: 2
