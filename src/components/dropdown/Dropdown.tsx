@@ -2,11 +2,13 @@ import s from "./dropdown.module.sass"
 import {motion, AnimatePresence} from "framer-motion"
 import {forwardRef, useState} from "react"
 import {variants} from "../../animations/dropdown"
-import {toggle} from "../../functions/functions";
+import {toggle} from "../../functions/functions"
+import {DropdownLink} from "../../types/types"
+import {Link} from "react-router-dom"
 
 interface DropdownProps {
     title: string,
-    items: string[],
+    items: DropdownLink[],
     className?: string
 }
 
@@ -37,10 +39,10 @@ export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>( ({title, item
                         variants={variants}
                         className={s.dropdown__container}>
                         <ul className={s.dropdown__list}>
-                            {items.map(text =>
-                                <li key={text} className={s.dropdown__item}>
-                                    {text}
-                                </li>
+                            {items.map(link =>
+                                <Link to={link.to} key={link.text} className={s.dropdown__item}>
+                                    {link.text}
+                                </Link>
                             )}
                         </ul>
                     </motion.div>

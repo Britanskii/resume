@@ -1,8 +1,8 @@
 import s from "./link.module.sass"
-import {motion} from "framer-motion"
 import {variants} from "../../../animations/header"
 import {MDropdown} from "../../dropdown/Dropdown"
 import {LinkType} from "../../../types/types"
+import MLink from "../../mLink/MLink"
 
 interface LinkProps {
     link: LinkType,
@@ -12,13 +12,15 @@ interface LinkProps {
 const Link = ({link, delay}: LinkProps) => {
 
     if (link.type === "div") {
-        return <motion.div
+        return <MLink
+            to={link.to}
             variants={variants}
             custom={delay}
             initial='initial'
             animate='appearance'
-            className={s.link}>{link.text}
-        </motion.div>
+            className={s.link}>
+            {link.text}
+        </MLink>
     } else if (link.type === "dropdown" && link.items !== undefined) {
         return <MDropdown
             title={link.text}
