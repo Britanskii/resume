@@ -17,7 +17,7 @@ const Link = ({link, delay}: LinkProps) => {
             custom={delay}
             initial='initial'
             animate='appearance'
-            className={s.header__link}>{link.text}
+            className={s.link}>{link.text}
         </motion.div>
     } else if (link.type === "dropdown" && link.items !== undefined) {
         return <MDropdown
@@ -27,7 +27,7 @@ const Link = ({link, delay}: LinkProps) => {
             custom={delay}
             initial='initial'
             animate='appearance'
-            className={s.header__link}
+            className={s.link}
         />
     } else {
         return <></>
